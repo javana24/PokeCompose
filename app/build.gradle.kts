@@ -1,3 +1,5 @@
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -44,13 +46,14 @@ dependencies {
 
     //Hilt
     implementation(libs.hilt.android)
+    implementation(libs.androidx.navigation.safe.args.generator)
     ksp(libs.hilt.compiler)
 
     // View Model
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Navigation
     implementation(libs.androidx.navigation.compose)
-
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

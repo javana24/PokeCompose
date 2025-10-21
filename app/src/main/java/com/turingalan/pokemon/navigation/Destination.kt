@@ -8,5 +8,5 @@ sealed class Destination(val route: String) {
     object List: Destination(route = "PokemosScreen")
 
     @Serializable
-    data class Detail(val id:Long): Destination(route="PokemonDetailViewModel")
+    data class Detail(val id: Long): Destination(route="PokemonDetailViewModel")
 }
