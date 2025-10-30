@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 sealed class Destination(val route: String) {
     @Serializable
-    object List: Destination(route = "PokemosScreen")
+    object List: Destination(route = "PokemosListScreen")
 
     @Serializable
     data class Detail(val id: Long): Destination(route="PokemonDetailViewModel")

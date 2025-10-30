@@ -1,6 +1,7 @@
 
 
 plugins {
+    alias(libs.plugins.serialization)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
@@ -46,7 +47,7 @@ dependencies {
 
     //Hilt
     implementation(libs.hilt.android)
-    implementation(libs.androidx.navigation.safe.args.generator)
+    //implementation(libs.androidx.navigation.safe.args.generator)
     ksp(libs.hilt.compiler)
 
     // View Model

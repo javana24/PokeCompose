@@ -7,9 +7,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
@@ -44,14 +46,17 @@ fun PokemonListScreen(
         LazyColumn(modifier = Modifier
             .fillMaxSize()
             .padding(paddingValues),
-            contentPadding = PaddingValues(8.dp)) {
+            contentPadding = PaddingValues(16.dp)) {
             items(
                 items = pokemons,
                 key = {
                     it.id
                 }
-            ){
-                PokemonListScreen(
+            ){ pokemon ->
+                PokemonListItemCard(
+                    pokemonId = pokemon.id,
+                    name = pokemon.name,
+                    spriteId = pokemon.spriteId,
                     onShowDetail = onShowDetail
                 )
 
@@ -70,14 +75,16 @@ fun PokemonListItemCard(
 )
 {
     Card (
-        modifier = Modifier.fillMaxWidth().clickable(enabled = true, onClick = {
+        modifier = Modifier.fillMaxWidth().padding(8.dp).clickable(enabled = true, onClick = {
             onShowDetail(pokemonId)
         } )
     ){
         Row {
             Image(
+
                 painterResource(spriteId),
-                contentDescription = ""
+                contentDescription = "",
+                Modifier.size(120.dp)
             )
             Text(text = name,
                 style = MaterialTheme.typography.labelSmall)

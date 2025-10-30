@@ -8,6 +8,7 @@ import com.turingalan.pokemon.data.model.Pokemon
 
 import com.turingalan.pokemon.data.repository.PokemonRepository
 import com.turingalan.pokemon.navigation.Destination
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,6 +18,7 @@ data class DetailUiSate(
     val name:String = "",
     val artworkId:Int? = null
 )
+@HiltViewModel
 class PokemonDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val pokemonRepository: PokemonRepository

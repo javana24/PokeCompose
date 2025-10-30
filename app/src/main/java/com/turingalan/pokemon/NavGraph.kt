@@ -28,7 +28,7 @@ fun NavGraph() {
             {
                 TopAppBar(
                     title= {
-                        Text(text = "Personajes Rainbow Six")
+                        Text(text = "POKEMONS")
                     }
                 )
             }
@@ -47,9 +47,7 @@ fun NavGraph() {
             }
             composable<Destination.Detail> {
                 PokemonDetailScreen(
-                    modifier = contentModifier,
-                    name = "NAME",
-                    artworkId = 1
+                    modifier = contentModifier
                 )
             }
         }
